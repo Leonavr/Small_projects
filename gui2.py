@@ -3,7 +3,7 @@ import time
 count = 30
 def calc ():
     print(password.get())
-
+    password.set('')
 def destroy():
     global curtime
     global count
