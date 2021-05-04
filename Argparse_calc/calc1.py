@@ -9,12 +9,11 @@ parser.add_argument("--verbose", "-v",
                     help="подробность вывода")
 parser.add_argument("--file", "-f", type=argparse.FileType('w', encoding='utf-8'), 
                     help="Запись в файл и вывод на экран")
-parser.add_argument("--quite", "-q", type=argparse.FileType('w', encoding='utf-8'),
+parser.add_argument("--quite", "-q", nargs = '?', type=argparse.FileType('w', encoding='utf-8'),
                     help="Запись в файл без вывода")
 parser.add_argument("--append", "-a", type=argparse.FileType('a', encoding='utf-8'),
                     help="Дополнение в файл без вывода")
 args = parser.parse_args()
-
 def calc():
     if args.oper == '+':
         summa = 0
