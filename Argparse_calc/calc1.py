@@ -7,14 +7,14 @@ oper = parser.add_argument("oper")
 parser.add_argument("--verbose", "-v", 
                     action='store_true', 
                     help="подробность вывода")
-parser.add_argument("--file", "-f", nargs = '?', type=argparse.FileType('w', encoding='utf-8'), 
+parser.add_argument("--file", "-f", type=argparse.FileType('w', encoding='utf-8'), 
                     help="Запись в файл и вывод на экран")
-parser.add_argument("--quite", "-q", nargs = '?', type=argparse.FileType('w', encoding='utf-8'),
+parser.add_argument("--quite", "-q", type=argparse.FileType('w', encoding='utf-8'),
                     help="Запись в файл без вывода")
-parser.add_argument("--append", "-a", nargs = '?', type=argparse.FileType('a', encoding='utf-8'),
+parser.add_argument("--append", "-a", type=argparse.FileType('a', encoding='utf-8'),
                     help="Дополнение в файл без вывода")
 args = parser.parse_args()
-print(args)
+
 def calc():
     if args.oper == '+':
         summa = 0
@@ -53,11 +53,11 @@ if args.verbose:
     print(result)
 
 elif args.file:
-    args.file.write(result)
+    args.file.write(f'{result}\n')
     print(result)
 
 elif args.quite:
-    args.quite.write(result)
+    args.quite.write(f'{result}\n')
 
 elif args.append:
     args.append.write(f'{result}\n')
