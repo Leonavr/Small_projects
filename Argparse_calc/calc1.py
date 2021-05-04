@@ -15,7 +15,7 @@ parser.add_argument("--quite", "-q", nargs = '?', type=argparse.FileType('w', en
 parser.add_argument("--append", "-a", type=argparse.FileType('a', encoding='utf-8'),
                     help="Дополнение в файл без вывода")
 args = parser.parse_args()
-print (args)
+
 def calc():
     if args.oper == '+':
         summa = 0
@@ -48,12 +48,28 @@ def calc():
             else:
                 dell /= args.nums[i]
         return dell
-
+print(args)
 result = f' {args.oper} '.join(map(str, args.nums)) + ' = ' + str(calc())
 
-if args.verbose == True:
+if args.verbose == True and args.file == None and args.append == None and args.quite == None:
     print(result)
 
+if args.verbose == False and args.file and args.append == None and args.quite == None:
+    args.file.write(f'{result}\n')
+    print(result)
+
+if args.verbose == False and args.file == None and args.append and args.quite == None:
+    args.append.write(f'{result}\n')
+
+if args.verbose == False and args.file == None and args.append == None and args.quite:
+    args.quite.write(f'{result}\n')
+
+if args.verbose == False and args.file == None and args.append == None and args.quite == None:
+    print('')
+else:
+    print(calc())
+'''if args.verbose:
+    print(result)
 elif args.file:
     args.file.write(f'{result}\n')
     print(result)
@@ -64,8 +80,8 @@ elif args.quite:
 elif args.append:
     args.append.write(f'{result}\n')
 
-elif sys.argv[-1] == '-q':
+elif args.quite == '-q':
     print('')
 
 else:
-    print(calc())
+    print(calc())'''
