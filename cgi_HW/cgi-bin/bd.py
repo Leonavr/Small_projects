@@ -13,7 +13,7 @@ print('''
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 </head>
-<h2><font color="navy">List of visits</font></h2>
+<h2><font color="navy">List of customers</font></h2>
 <body>
 <ul>''')
 
