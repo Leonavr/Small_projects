@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="ru">
+        <head>
+            <meta charset="utf-8">
+            <title>Системная информация</title>
+        </head>
+        <body>
+			<form action="/cgi-bin/country.py" method = "get">
+				<label>
+					<div>Введите страну: </div>
+					<input type="text" name="kan">
+					<input style="margin-left: 50px; margin-top: 10px;" type="submit" value="Submit" />
+				</label>
+			<form action="/cgi-bin/name_search.py" method = "get">
+				<label>
+				<div>Введите имя: </div>
+					<input type="text" name="poisk">
+					<input style="margin-left: 50px; margin-top: 10px;" type="submit" value="Submit" />
+				</label>
+				<br />
+			</form>
+			
+            <h2>Системная информация</h2>
+			<ol>
+				<li><a href="cgi-bin\time.py">Дата</a></li>
+				<li><a href="cgi-bin\last.py">Список посещений</a></li>
+				<li><a href="cgi-bin\bd.py">Список Клиентов</a></li>
+			</ol>
+        </body>
+    </html>
