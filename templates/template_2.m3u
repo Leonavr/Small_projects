@@ -1,0 +1,11 @@
+<html>
+    <head> <style> </style> </head>
+    <body>
+        #EXTM3U
+        % for i in list_of_files:
+        #EXTINF:123, File1
+        <li> <a href="${i}" >${i}</a> </li>
+		%endfor
+        </ol>
+    </body>
+    </html>

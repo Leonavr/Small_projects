@@ -1,0 +1,21 @@
+<html>
+    <head>
+    <style>
+    figure {
+        margin: 20;
+    }
+    </style>
+    </head>
+    <body>
+		<figure>
+		% for i in list_of_files:
+        <figcaption>${i}</figcaption>
+        <audio controls
+                src="${i}">
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>
+        %endfor
+        </figure>
+    </body>
+</html>
