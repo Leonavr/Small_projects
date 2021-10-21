@@ -48,22 +48,18 @@ class Main(Frame):
         self.lbl4 = Label(root, justify="left",
                          text=f"Проиграно: {self.game}")              
 
-
-        
-
         self.lbl2.place(x = 60, y = 30)
         self.lbl3.place(x = 160, y = 30)
         self.lbl4.place(x = 260, y = 30)
 
-    
     def btn_click(self, choise):
         list_1 = ['камень','ножницы', "бумагу","ящерицу", "Спока"]
         comp_choise = randrange(len(list_1))
 
-        if (choise == 0 and comp_choise == 1) or (choise == 1 and comp_choise == 2) or (choise == 2 and comp_choise == 0) \
-             or (choise == 0 and comp_choise == 3) or (choise == 1 and comp_choise == 2) or (choise == 1 and comp_choise == 3) \
-                  or (choise == 2 and comp_choise == 0) or (choise == 2 and comp_choise == 4) or (choise == 3 and comp_choise == 4) \
-                      or (choise == 3 and comp_choise == 2) or (choise == 4 and comp_choise == 1) or (choise == 3 and comp_choise == 0):
+        if ((choise == 0 and comp_choise == 1) or (choise == 1 and comp_choise == 2) or (choise == 2 and comp_choise == 0)
+            or (choise == 0 and comp_choise == 3) or (choise == 1 and comp_choise == 2) or (choise == 1 and comp_choise == 3)
+            or (choise == 2 and comp_choise == 0) or (choise == 2 and comp_choise == 4) or (choise == 3 and comp_choise == 4)
+            or (choise == 3 and comp_choise == 2) or (choise == 4 and comp_choise == 1) or (choise == 3 and comp_choise == 0)):
             self.win += 1
             self.game +=1
             self.lbl.configure(text=f"Я выбрал {list_1[comp_choise]}")
