@@ -2,6 +2,8 @@ import sys
 import random
 from PySide2 import QtCore, QtWidgets, QtGui
 from random import randrange
+
+
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -68,10 +70,10 @@ class MyWidget(QtWidgets.QWidget):
         list_1 = ['камень','ножницы', "бумагу","ящерицу", "Спока"]
         comp_choise = randrange(len(list_1))
         self.text.setText(f"Я выбрал {list_1[comp_choise]}")
-        if (choise == 0 and comp_choise == 1) or (choise == 1 and comp_choise == 2) or (choise == 2 and comp_choise == 0) \
-             or (choise == 0 and comp_choise == 3) or (choise == 1 and comp_choise == 2) or (choise == 1 and comp_choise == 3) \
-                  or (choise == 2 and comp_choise == 0) or (choise == 2 and comp_choise == 4) or (choise == 3 and comp_choise == 4) \
-                      or (choise == 3 and comp_choise == 2) or (choise == 4 and comp_choise == 1) or (choise == 3 and comp_choise == 0):
+        if ((choise == 0 and comp_choise == 1) or (choise == 1 and comp_choise == 2) or (choise == 2 and comp_choise == 0) 
+            or (choise == 0 and comp_choise == 3) or (choise == 1 and comp_choise == 2) or (choise == 1 and comp_choise == 3) 
+            or (choise == 2 and comp_choise == 0) or (choise == 2 and comp_choise == 4) or (choise == 3 and comp_choise == 4)
+            or (choise == 3 and comp_choise == 2) or (choise == 4 and comp_choise == 1) or (choise == 3 and comp_choise == 0)):
             self.win += 1
             self.game +=1
             self.text.setText(f"Я выбрал {list_1[comp_choise]}")
